@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Pizzaria JSF</title>
+	<style>
+.fundo {
+	background-image: url("../imagens/pizza1.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+</style>
+
+</h:head>
+<h:body styleClass="fundo">
+
+
+
+	<h:form>
+
+		<p:panelGrid columns="2">
+			<p:outputLabel value="Nome Cliente: "></p:outputLabel>
+			<p:inputText value="#{pizzaria.nome}"></p:inputText>
+
+			<p:outputLabel for="tel" value="Telefone: "></p:outputLabel>
+			<p:inputMask id="tel" value="#{pizzaria.telefone}" mask="(99)99999-9999"></p:inputMask>
+			
+			<p:outputLabel value="Informe o tipo de massa que deseja: "></p:outputLabel>
+			<p:selectOneMenu id="tipoMassa" value="#{pizzaria.tipoMassa}">
+				<f:selectItems value="#{pizzaria.selecionarTipoMassa}"></f:selectItems>
+			</p:selectOneMenu>
+			
+			<p:outputLabel value="Informe a cobertura que deseja: "></p:outputLabel>
+			<p:selectOneMenu id="tipoCobertura" value="#{pizzaria.tipoCobertura}">
+				<f:selectItems value="#{pizzaria.selecionarTipoCobertura}"></f:selectItems>
+			</p:selectOneMenu>
+			
+			
+			
+			<p:outputLabel value="Informe o tamanho da pizza: "></p:outputLabel>
+			<p:selectOneRadio id="tamanhoPizza" value="#{pizzaria.tamanhoPizza}">
+			   <f:selectItems value="#{pizzaria.selecionarTamanhoPizza}"></f:selectItems>
+			</p:selectOneRadio>
+			
+			<p:outputLabel value="Informe o valor da pizza: "></p:outputLabel>
+			<p:inputNumber symbol="R$" value="#{pizzaria.valorPizza}"></p:inputNumber>
+			
+			<p:outputLabel value="Informe o método de entrega: "></p:outputLabel>
+			<p:selectOneRadio id="metodoEntrega" value="#{pizzaria.metodoEntrega}">
+			   <f:selectItems value="#{pizzaria.selecionarMetodoEntrega}"></f:selectItems>
+			</p:selectOneRadio>
+			
+
+
+
+			
+
+		</p:panelGrid>
+		<p:commandButton value="Enviar Pedido"
+				action="#{pizzaria.listarItens}"></p:commandButton>
+			<p:commandButton value="Limpar" action="#{pizzaria.limpar}"></p:commandButton>
+
+	</h:form>
+
+
+</h:body>
+</html>

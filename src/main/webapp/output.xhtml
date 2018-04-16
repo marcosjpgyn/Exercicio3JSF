@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Pizzaria JSF</title>
+	<style>
+.fundo {
+	background-image: url("../imagens/pizza.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+</style>
+</h:head>
+<h:body styleClass="fundo">
+	<h:form>
+		<p:panelGrid columns="2">
+
+
+			<p:outputLabel value="Nome: "></p:outputLabel>
+			<p:outputLabel value="#{pizzaria.nome}"></p:outputLabel>
+
+			<p:outputLabel value="Telefone: "></p:outputLabel>
+			<p:outputLabel value="#{pizzaria.telefone}"></p:outputLabel>
+
+			<p:outputLabel value="Massa da pizza: "></p:outputLabel>
+			<p:outputLabel value="#{pizzaria.tipoMassa}"></p:outputLabel>
+
+			<p:outputLabel value="Cobertura da pizza: "></p:outputLabel>
+			<p:outputLabel value="#{pizzaria.tipoCobertura}"></p:outputLabel>
+
+			<p:outputLabel value="Tamanho da pizza: "></p:outputLabel>
+			<p:outputLabel value="#{pizzaria.tamanhoPizza}"></p:outputLabel>
+
+			<p:outputLabel value="Valor da pizza: "></p:outputLabel>
+			<p:outputLabel value="#{pizzaria.valorPizza}"></p:outputLabel>
+
+			<p:outputLabel value="Tipo de entrega: "></p:outputLabel>
+			<p:outputLabel value="#{pizzaria.metodoEntrega}"></p:outputLabel>
+
+			<p:commandButton value="Fazer Novo Pedido"
+				action="#{pizzaria.novoPedido}"></p:commandButton>
+
+
+
+
+
+		</p:panelGrid>
+
+	</h:form>
+
+
+</h:body>
+</html>
